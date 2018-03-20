@@ -244,7 +244,7 @@ class Telegram extends Adapter
       setInterval =>
         @api.invoke 'getUpdates', {offset: @getLastOffset(), limit: 10}, (err, result) =>
           if err
-            @emit 'error', err
+            # @emit 'error', err
             return
 
           return unless result.length
