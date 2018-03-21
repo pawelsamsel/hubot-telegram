@@ -120,6 +120,8 @@ class Telegram extends Adapter
 
     @robot.logger.debug "Message length: " + opts.text.length
     @robot.logger.debug "Message parts: " + chunks.length
+    
+    opts.parse_mode = 'HTML'
 
     # Chunk message delivery when required
     send = (cb) =>
