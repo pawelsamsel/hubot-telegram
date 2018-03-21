@@ -116,6 +116,8 @@ class Telegram extends Adapter
   ###
   apiSend: (opts, cb) ->
     @self = @
+    
+    opts.text = opts.text.split('<').join('&lt;').split('>').join('&gt;')
     chunks = opts.text.match /[^]{1,4096}/g
 
     @robot.logger.debug "Message length: " + opts.text.length
